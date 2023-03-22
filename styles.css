@@ -1,0 +1,281 @@
+
+body {
+    font-family: Arial, sans-serif !important;
+}
+
+
+/**
+    CSS SERVICES
+**/
+
+#services.p-8 {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+#services, #services .card {
+    background-color: rgb(245, 245, 245);
+}
+
+#services .p-8 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 2rem;
+}
+
+@media (max-width: 1250px) {
+    #services .p-8 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/**
+    CSS WORKS
+**/
+#works .mask {
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+/* Felicien section */
+/**
+    CSS HAPPY CLIENTS
+**/
+
+#section-happy-clients {
+    margin-top: 4rem;
+    margin-bottom: 7rem;
+}
+
+#quote-happy-clients {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#quote-happy-clients .quote-icon {
+    color: rgb(149, 155, 162);
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Change size, color and position for carousel button */
+#carouselHappyClients .carousel-indicators {
+    margin-bottom: -2rem;
+}
+
+#carouselHappyClients .carousel-indicators [data-bs-target] {
+    background-color: white;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+#carouselHappyClients .carousel-indicators .active {
+    background-color: black !important;
+}
+
+/* Change size and color for horizonta lines */
+hr.little-hr-black {
+    width: 50px;
+    margin: auto;
+    border-top: 3px solid black;
+    opacity: 1;
+}
+
+/**
+    CSS PROFESSIONAL TEAM
+**/
+#professional-team {
+    background-image: url("./img/team-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+hr.little-hr-white {
+    width: 50px;
+    margin: auto;
+    border-top: 3px solid white;
+    opacity: 1;
+}
+
+#professional-team .card {
+    background-color: rgb(241, 241, 241);
+}
+
+#professional-team .mask {
+    background-color: hsla(0, 0%, 0%, 0.6);
+}
+
+/**
+    CSS MARQUES
+**/
+
+#marques .bg-grey {
+    background-color: #F5F5F5;
+}
+
+#pricing-table p {
+    text-align: center;
+}
+
+#pricing-table .card {
+    transition: all 0.3s ease-in-out;
+}
+
+#pricing-table .card:hover {
+    transform: translateY(-15px);
+}
+
+#pricing-table .btn-grey {
+    background-color: #475563;
+    color: white;
+}
+
+
+/* Seb section */
+/**
+    CSS CONTACT
+**/
+.map {
+    background-image: url('./img/map.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+
+.pointer {
+    height: 70px;
+    width: 50px;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.contact {
+    background-image: url('./img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Opacity on background */
+.overlay {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 700px;
+    background-color: rgba(141, 139, 139, 0);
+}
+
+
+/* Formulaire */
+.formulaire {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.formulaire .form-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.formulaire input {
+    width: 300px;
+}
+
+.formulaire label {
+    color: white;
+    margin-right: 20px;
+    margin-top: 15px;
+    width: 80px;
+    text-align: left;
+}
+
+.formulaire input {
+    color: white;
+    flex: 1;
+    padding: 10px;
+    border-radius: 1%;
+    background-color: transparent;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.formulaire textarea {
+    color: white;
+    flex: 1;
+    padding: 10px;
+    border-radius: 1%;
+    background-color: transparent;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    resize: vertical; /* permet de redimensionner la zone de texte verticalement uniquement */
+    min-height: 160px; /* hauteur minimale de la zone de texte */
+    width: 100%; /* largeur de la zone de texte */
+    text-align: left; /* alignement du texte à gauche */
+}
+
+
+.formulaire button {
+    padding: 10px 30px;
+    border-radius: 1%;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+@media only screen and (max-width: 1200px) {
+    .map {
+        background-position: center;
+    }
+
+    .contact {
+        position: relative;
+        background-color: rgba(141, 139, 139, 0);
+    }
+
+    .formulaire .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .formulaire input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .formulaire label {
+        margin-top: 5px;
+    }
+
+    .formulaire button {
+        padding: 5px 20px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Ariel css */
+.header-background-image {
+    background-image: url(img/Header/background+overlay.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.footer-background-image {
+    background-image: url(img/Footer/Rectangle_8.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
