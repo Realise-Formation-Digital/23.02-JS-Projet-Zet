@@ -19,7 +19,7 @@ const options = [
 ];
 // ----------- Variables --------------------------------------------------------
 let selectionList = []; // liste du template et des fonctionnalités choisies
-
+let buySection = document.getElementById('buy-selection'); // div buy-selection
 // ------------------------------------------------------------------------------
 
 
@@ -28,6 +28,11 @@ let selectionList = []; // liste du template et des fonctionnalités choisies
  * Fonction qui vide la séléction et ferme la fenêtre
  */
 function clr(){
+   // vide la liste
+   selectionList = [];
+
+   // vide la div buy-selection
+   buySection.innerHTML = null;
 
 }
 
