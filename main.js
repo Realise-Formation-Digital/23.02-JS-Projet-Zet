@@ -33,7 +33,6 @@ function clr(){
 
    // vide la div buy-selection
    buySection.innerHTML = '';
-
 }
 
 /**
