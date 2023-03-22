@@ -64,7 +64,6 @@ const options = [
 ];
 // ----------- Variables --------------------------------------------------------
 let selectionList = []; // liste du template et des fonctionnalités choisies
-
 // ------------------------------------------------------------------------------
 
 
@@ -73,7 +72,12 @@ let selectionList = []; // liste du template et des fonctionnalités choisies
  * Fonction qui vide la séléction et ferme la fenêtre
  */
 function clr(){
+   let buySection = document.getElementById('buy-selection'); // div buy-selection
+   // vide la liste
+   selectionList = [];
 
+   // vide la div buy-selection
+   buySection.innerHTML = '';
 }
 
 /**
