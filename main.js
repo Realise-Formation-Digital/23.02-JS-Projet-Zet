@@ -95,7 +95,7 @@ const options = [
    }
 ];
 // ----------- Variables --------------------------------------------------------
-let selectionList = []; // liste du template et des fonctionnalités choisies
+let selectionList = {}; // liste du template et des fonctionnalités choisies
 // ------------------------------------------------------------------------------
 
 
@@ -177,5 +177,53 @@ function dynamicWindowHTML(){
  * @param {*} templateId 
  */
 function createBuyWindow(templateId) {
+
+   let buyWindowId = document.getElementById("buy-selection");
+
+   buyWindowId.innerHTML = buyWindowHTML();
+
+   const template = temp.find((t) => t.id === templateId);
+
+   //Ajouter dans la buy window l'image
+   let buyWindowTemplateImageId = document.getElementById('templateImage');
+   buyWindowTemplateImageId.innerHTML = `<img src="${template.url}" alt="${template.name}">`;
+
+   //Ajouter dans la buy window le nom du template
+   let buyWindowTemplateNameId = document.getElementById('templateName');
+   buyWindowTemplateNameId.innerHTML = `${template.name}`;
+
+   //Ajouter dans la buy window la description du template
+   let buyWindowTemplateDescriptionId = document.getElementById('templateDescription');
+   buyWindowTemplateDescriptionId.innerHTML = `${template.description}`;
+
+   //Ajouter dans la buy window le prix du template
+   let buyWindowTemplatePriceId = document.getElementById('templatePrice');
+   buyWindowTemplatePriceId.innerHTML = `${template.price}`;
+
+   
+   selectionList = {"template": template};
+
+}
+
+function buyWindowHTML(){
+   return `
+   <div class="container-fluid">
+   <div>
+      <button onclick="clr()">X</button>
+   </div>
+    <div>
+        <div>
+            <div id="templateImage"></div>
+        </div>
+
+        <div>
+            <h1 id="templateName"></h1>
+            <h2 id="templateDescription"></h2>
+        </div>
+        <div>
+            <h1 id="templatePrice"></h1>
+        </div>
+    </div>
+    `
 
 }
