@@ -11,7 +11,7 @@ const temp = [
    {
       "id": "2",
       "name": "Kick the Boss 2",
-      "price":"125",
+      "price": "125",
       "description": "Votre patron vous ennuie-t-il ? Attaquez-vous comme si c'était votre patron ! Pas de désintégration ou de déchirure grâce au coton apaisant et à la couture au laser",
       "url": "img/2.jpg"
    },
@@ -19,7 +19,7 @@ const temp = [
    {
       "id": "3",
       "name": "Coil",
-      "price":"100",
+      "price": "100",
       "description": "La façon la plus délicieuse et merveilleuse de boire du café",
       "url": "img/3.jpg"
    },
@@ -27,7 +27,7 @@ const temp = [
    {
       "id": "4",
       "name": "Robin",
-      "price":"95",
+      "price": "95",
       "description": "Plus besoin d'être en retard pour les rendez-vous et dates d'affaires importants grâce à l'agenda en ligne.",
       "url": "img/4.jpg"
    },
@@ -35,7 +35,7 @@ const temp = [
    {
       "id": "5",
       "name": "Template 5",
-      "price":"Mensuellement 65-Annuel:715!!",
+      "price": "Mensuellement 65-Annuel:715!!",
       "description": "temporairement, si vous achetez annuellement, nous payons vos frais mensuels. Site sécurisé avec satellite et connexion sécurisée",
       "url": "img/5.jpg"
    }
@@ -95,7 +95,7 @@ const options = [
    }
 ];
 // ----------- Variables --------------------------------------------------------
-let selectionList = []; // liste du template et des fonctionnalités choisies
+let selectionList = {}; // liste du template et des fonctionnalités choisies
 // ------------------------------------------------------------------------------
 
 
@@ -103,7 +103,7 @@ let selectionList = []; // liste du template et des fonctionnalités choisies
 /**
  * Fonction qui vide la séléction et ferme la fenêtre
  */
-function clr(){
+function clr() {
    let buySection = document.getElementById('buy-selection'); // div buy-selection
    // vide la liste
    selectionList = [];
@@ -116,9 +116,11 @@ function clr(){
  * Prendre lla liste de selection et calcule le prix total et le retourne
  */
 function calculator() {
+   //Initialise le prix total avec le prix du template
    let totalPrice = Number(selectionList.template.price);
 
-   for(let option of selectionList.options){
+   //Ajoute au prix total le prix de chaque option sélectionnée
+   for (let option of selectionList.options) {
       totalPrice += Number(option.price);
    }
 
@@ -129,14 +131,13 @@ function calculator() {
 /**
  * Affiche le prix total calculé et la liste de la selection
  */
-function displayPrice(){
+function displayPrice() {
    const price = calculator();
 
    //Ajouter la dynamic window vide
-   const dynamicWindow = dynamicWindowHTML();
    let dynamicWindowId = document.getElementById('dynamicWindow');
-   dynamicWindowId.innerHTML = dynamicWindow;
-   
+   dynamicWindowId.innerHTML = dynamicWindowHTML();
+
    //Ajouter dans la dynamic window le nom du template
    let dynamicWindowTemplateNameId = document.getElementById('dynamicWindowTemplateName');
    dynamicWindowTemplateNameId.innerHTML = selectionList.template.name;
@@ -147,7 +148,7 @@ function displayPrice(){
 
    //Ajouter le nom et le prix des options
    let optionsInfos = '';
-   for(option of selectionList.options) {
+   for (option of selectionList.options) {
       optionsInfos += `<li class="list-group-item"> ${option.name}: CHF ${option.price}</li>`
    }
    let dynamicWindowOptionsInfosId = document.getElementById('dynamicWindowOptionsInfos');
@@ -159,7 +160,12 @@ function displayPrice(){
 
 }
 
-function dynamicWindowHTML(){
+/**
+ * Fonction qui retourne le HTML vide pour la dynamic window
+ * 
+ * @returns 
+ */
+function dynamicWindowHTML() {
    return `
       <div class="card">
          <h5 class="card-header">Liste des produits choisis</h5>
@@ -178,4 +184,109 @@ function dynamicWindowHTML(){
  */
 function createBuyWindow(templateId) {
 
+   //Ajouter le HTML vide à la div d'id buy-selection
+   let buyWindowId = document.getElementById("buy-selection");
+   buyWindowId.innerHTML = buyWindowHTML();
+
+   //Récupérer le template d'id passé en paramètre
+   const template = temp.find((t) => t.id === templateId);
+
+   //Ajouter le template à la liste des sélections
+   selectionList = { 
+      "template": template, 
+      "options": []
+   };
+
+   //Ajouter dans la buy window l'image
+   let buyWindowTemplateImageId = document.getElementById('templateImage');
+   buyWindowTemplateImageId.innerHTML = `<img src="${template.url}" alt="${template.name}">`;
+
+   //Ajouter dans la buy window le nom du template
+   let buyWindowTemplateNameId = document.getElementById('templateName');
+   buyWindowTemplateNameId.innerHTML = `${template.name}`;
+
+   //Ajouter dans la buy window la description du template
+   let buyWindowTemplateDescriptionId = document.getElementById('templateDescription');
+   buyWindowTemplateDescriptionId.innerHTML = `${template.description}`;
+
+   //Ajouter dans la buy window le prix du template
+   let buyWindowTemplatePriceId = document.getElementById('templatePrice');
+   buyWindowTemplatePriceId.innerHTML = `${template.price}`;
+
+   let optionsDisplay = '';
+   for(let option of options) {
+      optionsDisplay += `
+         <div class="form-check">
+            <input onclick="manageOptions(${option.id})" class="form-check-input" type="checkbox" value="${option.id}" id="option_${option.id}">
+            <label class="form-check-label" for="option_${option.id}">
+               ${option.name} - ${option.price}
+            </label>
+         </div>`
+      ;
+   }
+
+   //Ajouter dans la buy window la liste des options
+   let buyWindowOptionsDisplayId = document.getElementById('optionsDisplay');
+   buyWindowOptionsDisplayId.innerHTML = optionsDisplay;
+
+   //Ajouter la dynamic window
+   displayPrice();
+
+
+}
+
+/**
+ * Fonction qui retourne le HTML vide pour buy window
+ * 
+ * @returns 
+ */
+function buyWindowHTML() {
+   return `
+   <div class="container-fluid">
+   <div>
+      <button onclick="clr()">X</button>
+   </div>
+    <div>
+        <div>
+            <div id="templateImage"></div>
+        </div>
+
+        <div>
+            <h1 id="templateName"></h1>
+            <h2 id="templateDescription"></h2>
+        </div>
+        <div>
+            <h1 id="templatePrice"></h1>
+        </div>
+    </div>
+   <div id="optionsDisplay"></div>
+   <div id="dynamicWindow"></div>
+   <div id="dynamicWindowTotal"></div>
+    `
+
+}
+
+/**
+ * Fonction qui ajoute ou enlève une option de la selection list
+ * 
+ * @param {*} optionId 
+ */
+function manageOptions(optionId){  
+      
+   //Récupérer l'option de paramètre optionId dans la selection list (si absente, undefined)
+   const optionInSelection = selectionList.options.find((o) => o.id === optionId.toString())
+   
+   //Si l'option existe dans la selection list, on l'enlève
+   if (optionInSelection){
+      const index = selectionList.options.findIndex((o) => o.id === optionId.toString());
+      selectionList.options.splice(index, 1);
+   
+   //Si l'option n'existe pas, on l'ajoute
+   } else {
+      //Récupérer l'option d'id passé en paramètre
+      const option = options.find(o => o.id === optionId.toString());
+      selectionList.options.push(option);
+   }
+
+   displayPrice();
 }
