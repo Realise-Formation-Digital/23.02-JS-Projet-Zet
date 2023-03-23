@@ -10,95 +10,95 @@ const temp = [
 
    {
       "id": "2",
-      "name": "Kick the Boss 2",
-      "price":"125",
-      "description": " ",
+      "name": "Post Only",
+      "price":"110",// Première mois gratuit d'utilisation, Annuel 990.-
+      "description": "Vous aurez besoin de référencement lors de la création de votre site Web, nous fabriquons pour vous le logiciel de référencement le plus rapide et le personnel et vous le donnons. ",
       "url": "img/14.jpg"
    },
 
    {
       "id": "3",
-      "name": "Coil",
-      "price":"100",
-      "description": " ",
+      "name": "Fresh Music",
+      "price":"12",// starter free; basic 12.-; Premium 25.-
+      "description": "Vous pouvez écouter toute la musique sur Youtube et Spotify en un seul endroit avec le système cloud, les télécharger sur votre appareil et les partager.",
       "url": "img/13.jpg"
    },
 
    {
       "id": "4",
-      "name": "Robin",
-      "price":"95",
-      "description": " ",
+      "name": "App Screen",
+      "price":"15",
+      "description": "S'il existe un site Web que le style que vous souhaitez en tête , faisons en sorte qu'il se produise",
       "url": "img/12.jpg"
    },
 
    {
       "id": "5",
-      "name": "Template 5",
-      "price":"Mensuellement 65-Annuel:715!!",
-      "description": " ",
+      "name": "Suivre l'Alert",
+      "price":"25", //Par mois 25; Annuel 120
+      "description": "Vous ne savez pas où se trouve votre enfant ? Êtes-vous une famille curieuse? Nous vous permettons de vérifier à tout moment où se trouve votre enfant grâce aux signaux téléphoniques. ",
       "url": "img/11.jpg"
    },
 
    {
       "id": "6",
-      "name": "Template 5",
-      "price":"Mensuellement 65-Annuel:715!!",
-      "description": " ",
+      "name": "Bla Bla",
+      "price":"45",//Par mois 45; Annuel 100
+      "description": "Vous pouvez l'utiliser pour enregistrer vos projets et présentations, et vous pouvez également les modifier à votre guise en choisissant les personnes avec lesquelles vous souhaitez partager. ",
       "url": "img/10.jpg"
    },
 
    {
       "id": "7",
-      "name": "Template 5",
-      "price":"Mensuellement 65-Annuel:715!!",
-      "description": " ",
+      "name": "Grocéry",
+      "price":"120",
+      "description": "Si vous voulez manger les fruits et légumes les plus frais, vous êtes à la bonne adresse.",
       "url": "img/9.jpg"
    },
 
    {
       "id": "8",
-      "name": "Template 5",
-      "price":"Mensuellement 65-Annuel:715!!",
-      "description": " ",
+      "name": "Company",
+      "price":"255",
+      "description": "connaissance, Honnêtement, Soins ",
       "url": "img/8.jpg"
    },
 
    {
       "id": "9",
-      "name": "Template 5",
-      "price":"Mensuellement 65-Annuel:715!!",
-      "description": " ",
+      "name": "Mecatronique",
+      "price":"65",
+      "description": "Association de ceux qui codent robot avec arduino ",
       "url": "img/7.jpg"
    },
 
    {
       "id": "10",
-      "name": "Template 5",
-      "price":"Mensuellement 65-Annuel:715!!",
-      "description": " ",
+      "name": "Icon",
+      "price":"15",
+      "description": "créez votre propre icône. ",
       "url": "img/6.jpg"
    },
 
    {
       "id": "11",
-      "name": "Template 5",
+      "name": "Robin",
       "price":"Mensuellement 65-Annuel:715!!",
-      "description": "temporairement, si vous achetez annuellement, nous payons vos frais mensuels. Site sécurisé avec satellite et connexion sécurisée.",
+      "description": "Plus besoin d'être en retard pour les rendez-vous et dates d'affaires importants grâce à l'agenda en ligne. temporairement, si vous achetez annuellement, nous payons vos frais mensuels. Site sécurisé avec satellite et connexion sécurisée.",
       "url": "img/5.jpg"
    },
 
    {
       "id": "12",
-      "name": "Template 5",
-      "price":"  ",
-      "description": "Plus besoin d'être en retard pour les rendez-vous et dates d'affaires importants grâce à l'agenda en ligne.",
+      "name": "Satelite",
+      "price":" 75",
+      "description": "temporairement, si vous achetez annuellement, nous payons vos frais mensuels. Site sécurisé avec satellite et connexion sécurisée.",
       "url": "img/4.jpg"
    },
 
    {
       "id": "13",
-      "name": "Coil3",
+      "name": "Coil",
       "price":"100",
       "description": "La façon la plus délicieuse et merveilleuse de boire du café.",
       "url": "img/3.jpg"
@@ -108,7 +108,7 @@ const temp = [
       "id": "14",
       "name": "Kick the Boss 2",
       "price":"125",
-      "description": "Votre patron vous ennuie-t-il ? Attaquez-vous comme si c'était votre patron ! Pas de désintégration ou de déchirure grâce au coton apaisant et à la couture au laser. ",
+      "description": "Votre patron vous ennuie-t-il? Attaquez-vous comme si c'était votre patron! Pas de désintégration ou de déchirure grâce au coton apaisant et à la couture au laser. ",
       "url": "img/2.jpg"
    },
 
