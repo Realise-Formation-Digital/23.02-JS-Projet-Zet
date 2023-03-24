@@ -405,8 +405,7 @@ function buyWindowHTML() {
       </div>
    
       <div class="m-5" id="optionsDisplay"></div>
-      <div id="dynamicWindow"></div>
-      
+      <div class="m-5" id="dynamicWindow"></div>
 
    </div> `
 
