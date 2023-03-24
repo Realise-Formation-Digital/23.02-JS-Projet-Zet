@@ -219,7 +219,7 @@ function createBuyWindow(templateId) {
          <div class="form-check">
             <input onclick="manageOptions(${option.id})" class="form-check-input" type="checkbox" value="${option.id}" id="option_${option.id}">
             <label class="form-check-label" for="option_${option.id}">
-               ${option.name} - ${option.price}
+               ${option.name} -${option.description} - ${option.price}
             </label>
          </div>`
       ;
@@ -242,9 +242,9 @@ function createBuyWindow(templateId) {
  */
 function buyWindowHTML() {
    return `
-   <div class="container-fluid">
+   <div class="container-fluid new-page">
    <div>
-      <button onclick="clr()">X</button>
+      <button onclick="clr()" class="text-white bg-dark">X</button>
    </div>
     <div>
         <div>
