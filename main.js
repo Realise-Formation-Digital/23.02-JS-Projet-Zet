@@ -227,7 +227,7 @@ function displayPrice() {
 
    //Ajouter dans la dynamic window le prix du template
    let dynamicWindowTemplatePriceId = document.getElementById('dynamicWindowTemplatePrice');
-   dynamicWindowTemplatePriceId.innerHTML = selectionList.template.price;
+   dynamicWindowTemplatePriceId.innerHTML = `CHF ${selectionList.template.price}.-`;
 
    //Ajouter le nom et le prix des options
    let optionsInfos = '';
@@ -238,8 +238,8 @@ function displayPrice() {
                <div class="col-xs-12 col-sm-6">
                   ${option.name}
                </div>
-               <div class="col-xs-12 col-sm-6">
-               CHF ${option.price}
+               <div class="col-xs-12 col-sm-6 text-end">
+               CHF ${option.price}.-
                </div>
             </div>
          </li>`
@@ -249,7 +249,7 @@ function displayPrice() {
 
    //Ajouter le prix total
    let dynamicWindowTotalId = document.getElementById('dynamicWindowTotal');
-   dynamicWindowTotalId.innerHTML = `<h3>${price}</h3>`;
+   dynamicWindowTotalId.innerHTML = `<h3>CHF ${price}.-</h3>`;
 
 }
 
@@ -276,15 +276,18 @@ function dynamicWindowHTML() {
                         </div>
                      </div>
                   </li>
-                  <h5 class="card-header fw-bold">Options</h5>
-                  <div id="dynamicWindowOptionsInfos"></div>
                </ul>
-               
+               <h5 class="card-header fw-bold">Options</h5>
+               <ul class="list-group list-group-flush">
+                  <div id="dynamicWindowOptionsInfos"></div>
+               </ul>    
             </div>
          </div>
          <div class="col-xs-12 col-sm-6">
-            <h4 class="fw-bold">Prix total</h4>
-            <h5 id="dynamicWindowTotal"></h5>
+            <div class="card">
+               <h4 class="card-header fw-bold">Prix total</h4>
+               <h5 class="card-header fw-bold" id="dynamicWindowTotal"></h5>
+            </div>
          </div>
       </div>
    `
@@ -402,8 +405,7 @@ function buyWindowHTML() {
       </div>
    
       <div class="m-5" id="optionsDisplay"></div>
-      <div id="dynamicWindow"></div>
-      
+      <div class="m-5" id="dynamicWindow"></div>
 
    </div> `
 
