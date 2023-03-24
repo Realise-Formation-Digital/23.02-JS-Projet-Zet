@@ -37,6 +37,12 @@ body {
     background-color: hsla(0, 4%, 18%, 0.529);
 }
 
+.img-size {
+    width:250px !important;
+    height:auto;
+}
+
+
 /* Felicien section */
 /**
     CSS HAPPY CLIENTS

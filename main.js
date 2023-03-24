@@ -336,7 +336,7 @@ function createBuyWindow(templateId) {
 
    //Ajouter dans la buy window l'image
    let buyWindowTemplateImageId = document.getElementById('templateImage');
-   buyWindowTemplateImageId.innerHTML = `<img src="${template.url}" alt="${template.name}">`;
+   buyWindowTemplateImageId.innerHTML = `<img src="${template.url}" alt="${template.name} class="img-thumbnail mx-auto" style="width:250px;height:auto;">`;
 
    //Ajouter dans la buy window le nom du template
    let buyWindowTemplateNameId = document.getElementById('templateName');
@@ -348,7 +348,7 @@ function createBuyWindow(templateId) {
 
    //Ajouter dans la buy window le prix du template
    let buyWindowTemplatePriceId = document.getElementById('templatePrice');
-   buyWindowTemplatePriceId.innerHTML = `${template.price}`;
+   buyWindowTemplatePriceId.innerHTML = `${template.price}.-`;
 
    let optionsDisplay = '';
    for(let option of options) {
@@ -379,27 +379,33 @@ function createBuyWindow(templateId) {
  */
 function buyWindowHTML() {
    return `
-   <div class="container-fluid new-page">
-   <div>
-      <button onclick="clr()" class="text-white bg-dark">X</button>
-   </div>
-    <div>
-        <div>
-            <div id="templateImage"></div>
-        </div>
+   <div class="container-fluid w-100">
+      <div class="row">
+         <div class="col-xl-12 text-end">
+            <button class="border border-danger rounded text-danger" onclick="clr()">X</button>
+         </div>
+      </div>
+      <div class="row mt-3 mb-5">
+         <div class="col-xl-3">
+            <div id="templateImage" class=" text-center"></div>
+         </div>
+         <div class="col-xl-6">
+         <h1 id="templateName" class="text-start"></h1>
+            <h5 id="templateDescription" class="text-start"></h5>
+         </div>
+         <div class="col-xl-3">
+            <div>
+            
+               <h1 id="templatePrice" class="text-center border border-5"></h1>
+            </div>
+         </div>
+      </div>
+   
+      <div class="row" id="optionsDisplay"></div>
+      <div class="row" id="dynamicWindow"></div>
+      
 
-        <div>
-            <h1 id="templateName"></h1>
-            <h2 id="templateDescription"></h2>
-        </div>
-        <div>
-            <h1 id="templatePrice"></h1>
-        </div>
-    </div>
-   <div id="optionsDisplay"></div>
-   <div id="dynamicWindow"></div>
-   <div id="dynamicWindowTotal"></div>
-    `
+   </div> `
 
 }
 
