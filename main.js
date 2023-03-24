@@ -244,7 +244,7 @@ function buyWindowHTML() {
    return `
    <div class="container-fluid">
    <div>
-      <button onclick="clr()">X</button>
+      <button onclick="clr()" classe="btn-close btn-close-white" aria-label="Close">X</button>
    </div>
     <div>
         <div>
