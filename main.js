@@ -290,6 +290,13 @@ function dynamicWindowHTML() {
    `
 }
 
+document.querySelectorAll('a[href="#buy-selection"]').forEach(occurence => {
+   occurence.addEventListener('click', (e) => {
+      let templateId = e.target.id;
+      createBuyWindow(templateId);
+   });
+ });
+
 
 /**
  * Crée une fenêtre dynamique pour la section buy et affiche
