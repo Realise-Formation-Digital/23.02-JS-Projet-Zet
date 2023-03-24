@@ -86,7 +86,7 @@ const temp = [
    {
       "id": "11",
       "name": "Robin",
-      "price":"Mensuellement 65-Annuel:715!!",
+      "price":"225",
       "description": "Plus besoin d'être en retard pour les rendez-vous et dates d'affaires importants grâce à l'agenda en ligne. temporairement, si vous achetez annuellement, nous payons vos frais mensuels. Site sécurisé avec satellite et connexion sécurisée.",
       "url": "img/5.jpg"
    },
