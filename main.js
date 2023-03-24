@@ -290,6 +290,9 @@ function dynamicWindowHTML() {
    `
 }
 
+/**
+ * Listener qui surveille les clics sur les boutons buy et lance la fonction createBuyWindow avec l'id du template en paramètre
+ */
 document.querySelectorAll('a[href="#buy-selection"]').forEach(occurence => {
    occurence.addEventListener('click', (e) => {
       let templateId = e.target.id;
