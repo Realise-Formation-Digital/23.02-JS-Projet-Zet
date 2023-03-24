@@ -86,7 +86,7 @@ const temp = [
    {
       "id": "11",
       "name": "Robin",
-      "price":"Mensuellement 65-Annuel:715!!",
+      "price":"225",
       "description": "Plus besoin d'être en retard pour les rendez-vous et dates d'affaires importants grâce à l'agenda en ligne. temporairement, si vous achetez annuellement, nous payons vos frais mensuels. Site sécurisé avec satellite et connexion sécurisée.",
       "url": "img/5.jpg"
    },
@@ -339,17 +339,31 @@ function createBuyWindow(templateId) {
    let buyWindowTemplatePriceId = document.getElementById('templatePrice');
    buyWindowTemplatePriceId.innerHTML = `${template.price}.-`;
 
-   let optionsDisplay = '';
+   let optionsDisplay = '<div class="border row"><h3 class="text-center m-3">Options</h3><div class="col-sm-12 col-md-6">';
+   index = 0;
    for(let option of options) {
+      if (index === 5) {
+         optionsDisplay += '</div><div class="col-sm-12 col-md-6">';
+      }
+      index++;
+
       optionsDisplay += `
          <div class="form-check">
-            <input onclick="manageOptions(${option.id})" class="form-check-input" type="checkbox" value="${option.id}" id="option_${option.id}">
-            <label class="form-check-label" for="option_${option.id}">
-               ${option.name} -${option.description} - ${option.price}
-            </label>
+            <input onclick="manageOptions(${option.id})" class="form-check-input" type="checkbox" value="${option.id}" id="option_${option.id}">       
+               <div class="row m-3">
+                  <div class="col-9">
+                     <label class="form-check-label" for="option_${option.id}">
+                        ${option.name} - ${option.description}
+                     </label>
+                  </div>
+                  <div class="col-3 text-end">  
+                     CHF ${option.price}.-
+                  </div>
+               </div>
          </div>`
       ;
    }
+   optionsDisplay += '</div></div>';
 
    //Ajouter dans la buy window la liste des options
    let buyWindowOptionsDisplayId = document.getElementById('optionsDisplay');
@@ -390,8 +404,8 @@ function buyWindowHTML() {
          </div>
       </div>
    
-      <div class="row" id="optionsDisplay"></div>
-      <div class="row" id="dynamicWindow"></div>
+      <div class="m-5" id="optionsDisplay"></div>
+      <div id="dynamicWindow"></div>
       
 
    </div> `
