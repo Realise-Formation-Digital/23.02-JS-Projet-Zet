@@ -229,23 +229,37 @@ function displayPrice() {
    let dynamicWindowTemplatePriceId = document.getElementById('dynamicWindowTemplatePrice');
    dynamicWindowTemplatePriceId.innerHTML = selectionList.template.price;
 
-   //Ajouter le nom et le prix des options
-   let optionsInfos = '';
+   //Ajouter le nom et le prix des options avec les méthodes createElement et appendChild
    for (option of selectionList.options) {
-      optionsInfos += `
-         <li class="list-group-item">
-            <div class="row">
-               <div class="col-xs-12 col-sm-6">
-                  ${option.name}
-               </div>
-               <div class="col-xs-12 col-sm-6">
-               CHF ${option.price}
-               </div>
-            </div>
-         </li>`
+      //node li
+      let li = document.createElement('li');
+      li.classList.add("list-group-item");
+
+      //node div.col name
+      colDivName = document.createElement('div');
+      colDivName.classList.add('col-xs-12');
+      colDivName.classList.add('col-sm-6');
+      let name = document.createTextNode(option.name);
+      colDivName.appendChild(name);
+      
+      //node div.col price
+      colDivPrice = document.createElement('div');
+      colDivPrice.classList.add('col-xs-12');
+      colDivPrice.classList.add('col-sm-6');
+      let price = document.createTextNode(option.price);
+      colDivPrice.appendChild(price);
+
+      //node div.row in li
+      rowDiv = document.createElement('div');
+      rowDiv.classList.add('row');
+      rowDiv.appendChild(colDivName);
+      rowDiv.appendChild(colDivPrice);
+      li.appendChild(rowDiv);
+
+      //add node to div with id dynamicWindowOptionsInfos
+      let dynamicWindowOptionsInfosId = document.getElementById('dynamicWindowOptionsInfos');
+      dynamicWindowOptionsInfosId.appendChild(li);
    }
-   let dynamicWindowOptionsInfosId = document.getElementById('dynamicWindowOptionsInfos');
-   dynamicWindowOptionsInfosId.innerHTML = optionsInfos;
 
    //Ajouter le prix total
    let dynamicWindowTotalId = document.getElementById('dynamicWindowTotal');
