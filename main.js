@@ -234,7 +234,17 @@ function displayPrice() {
    //Ajouter le nom et le prix des options
    let optionsInfos = '';
    for (option of selectionList.options) {
-      optionsInfos += `<li class="list-group-item"> ${option.name}: CHF ${option.price}</li>`
+      optionsInfos += `
+         <li class="list-group-item">
+            <div class="row">
+               <div class="col-xs-12 col-sm-6">
+                  ${option.name}
+               </div>
+               <div class="col-xs-12 col-sm-6">
+               CHF ${option.price}
+               </div>
+            </div>
+         </li>`
    }
    let dynamicWindowOptionsInfosId = document.getElementById('dynamicWindowOptionsInfos');
    dynamicWindowOptionsInfosId.innerHTML = optionsInfos;
@@ -252,12 +262,32 @@ function displayPrice() {
  */
 function dynamicWindowHTML() {
    return `
-      <div class="card">
-         <h5 class="card-header">Liste des produits choisis</h5>
-         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><span id="dynamicWindowTemplateName"></span>: CHF <span id="dynamicWindowTemplatePrice"></span></li>
-            <div id="dynamicWindowOptionsInfos"></div>
-         </ul>
+      <div class="row">
+         <div class="col-xs-12 col-sm-6">
+            <div class="card">
+               <h4 class="card-header fw-bold">Liste des produits choisis</h4>
+               <h5 class="card-header fw-bold">Template</h5>
+               <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                     <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                           <div id="dynamicWindowTemplateName"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 text-end">
+                           <div id="dynamicWindowTemplatePrice"></div>
+                        </div>
+                     </div>
+                  </li>
+                  <h5 class="card-header fw-bold">Options</h5>
+                  <div id="dynamicWindowOptionsInfos"></div>
+               </ul>
+               
+            </div>
+         </div>
+         <div class="col-xs-12 col-sm-6">
+            <h4 class="fw-bold">Prix total</h4>
+            <h5 id="dynamicWindowTotal"></h5>
+         </div>
       </div>
    `
 }
@@ -304,7 +334,7 @@ function createBuyWindow(templateId) {
          <div class="form-check">
             <input onclick="manageOptions(${option.id})" class="form-check-input" type="checkbox" value="${option.id}" id="option_${option.id}">
             <label class="form-check-label" for="option_${option.id}">
-               ${option.name} - ${option.price}
+               ${option.name} -${option.description} - ${option.price}
             </label>
          </div>`
       ;
@@ -327,9 +357,9 @@ function createBuyWindow(templateId) {
  */
 function buyWindowHTML() {
    return `
-   <div class="container-fluid">
+   <div class="container-fluid new-page">
    <div>
-      <button onclick="clr()">X</button>
+      <button onclick="clr()" class="text-white bg-dark">X</button>
    </div>
     <div>
         <div>
